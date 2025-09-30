@@ -1,0 +1,239 @@
+/* --- Global Styles & Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: #4CAF50; /* A fresh green color */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    float: left;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Clearfix for header */
+header .container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: url('https://images.unsplash.com/photo-1627916965646-6c1701389e6c?fit=crop&w=1400&h=600') no-repeat center center/cover; /* Placeholder image: Dry Fruits */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1; /* For image overlay */
+}
+
+/* Dark overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FF9800; /* Vibrant orange for CTA */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #E68900;
+}
+
+.cta-button.secondary {
+    background: #607D8B; /* Secondary color for export section */
+    margin-top: 20px;
+}
+.cta-button.secondary:hover {
+    background: #455A64;
+}
+
+/* --- Products Section --- */
+.products {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.products h3 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 30px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-bottom: 20px;
+}
+
+.product-item {
+    flex: 1; /* Distributes space equally */
+    min-width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-top: 5px solid #FFC107; /* Accent color */
+}
+
+.product-item h4 {
+    color: #FF9800;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.more-info {
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* --- Export Information Section --- */
+.export-info {
+    background: #ECEFF1; /* Light gray background */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.export-info h3 {
+    font-size: 2.2rem;
+    color: #607D8B; /* Slate blue color */
+    margin-bottom: 20px;
+}
+
+.export-info p {
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    font-size: 1.1rem;
+}
+
+.export-info strong {
+    color: #333;
+}
+
+/* --- Footer & Contact --- */
+footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- Separator for clarity --- */
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 0;
+}
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    header h1, nav {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul {
+        padding-top: 10px;
+    }
+
+    nav ul li {
+        float: none;
+        display: inline;
+        margin: 0 10px;
+    }
+
+    .product-list {
+        flex-direction: column;
+    }
+
+    .product-item {
+        min-width: 100%;
+        margin-bottom: 15px;
+    }
+}

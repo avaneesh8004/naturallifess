@@ -1,239 +1,380 @@
-/* --- Global Styles & Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4; /* Light background for contrast */
-}
-
-.container {
-    width: 85%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* --- Header & Navigation --- */
-header {
-    background: #4CAF50; /* A fresh green color */
-    color: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    float: left;
-    margin-top: 5px;
-    font-weight: 700;
-}
-
-nav {
-    float: right;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    float: left;
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 5px 10px;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
-
-/* Clearfix for header */
-header .container::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* --- Hero Section --- */
-.hero {
-    background: url('https://images.unsplash.com/photo-1627916965646-6c1701389e6c?fit=crop&w=1400&h=600') no-repeat center center/cover; /* Placeholder image: Dry Fruits */
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    z-index: 1; /* For image overlay */
-}
-
-/* Dark overlay for text readability */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: -1;
-}
-
-.hero-content h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-.cta-button {
-    display: inline-block;
-    background: #FF9800; /* Vibrant orange for CTA */
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.cta-button:hover {
-    background: #E68900;
-}
-
-.cta-button.secondary {
-    background: #607D8B; /* Secondary color for export section */
-    margin-top: 20px;
-}
-.cta-button.secondary:hover {
-    background: #455A64;
-}
-
-/* --- Products Section --- */
-.products {
-    padding: 40px 0;
-    text-align: center;
-}
-
-.products h3 {
-    font-size: 2.5rem;
-    color: #4CAF50;
-    margin-bottom: 30px;
-}
-
-.product-list {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    margin-bottom: 20px;
-}
-
-.product-item {
-    flex: 1; /* Distributes space equally */
-    min-width: 250px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border-top: 5px solid #FFC107; /* Accent color */
-}
-
-.product-item h4 {
-    color: #FF9800;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-}
-
-.more-info {
-    font-style: italic;
-    color: #666;
-    margin-top: 20px;
-}
-
-/* --- Export Information Section --- */
-.export-info {
-    background: #ECEFF1; /* Light gray background */
-    padding: 60px 0;
-    text-align: center;
-}
-
-.export-info h3 {
-    font-size: 2.2rem;
-    color: #607D8B; /* Slate blue color */
-    margin-bottom: 20px;
-}
-
-.export-info p {
-    max-width: 800px;
-    margin: 0 auto 15px auto;
-    font-size: 1.1rem;
-}
-
-.export-info strong {
-    color: #333;
-}
-
-/* --- Footer & Contact --- */
-footer {
-    background: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-/* --- Separator for clarity --- */
-hr {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin: 0;
-}
-
-/* --- Media Query for Responsiveness --- */
-@media (max-width: 768px) {
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-
-    header h1, nav {
-        float: none;
-        text-align: center;
-    }
-
-    nav ul {
-        padding-top: 10px;
-    }
-
-    nav ul li {
-        float: none;
-        display: inline;
-        margin: 0 10px;
-    }
-
-    .product-list {
-        flex-direction: column;
-    }
-
-    .product-item {
-        min-width: 100%;
-        margin-bottom: 15px;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaturalLifes | Makhana & Cashew Exporters</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #388e3c;
+            --accent: #ffd600;
+            --secondary: #ff9800;
+            --bg: #f4f4f4;
+            --white: #fff;
+            --shadow: 0 4px 24px rgba(56, 142, 60, 0.08);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: #222;
+        }
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0;
+            text-align: left;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.7rem 2vw 0.7rem 2vw;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(56,142,60,0.10);
+            padding: 5px;
+        }
+        .brand-title {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .brand-highlight {
+            color: var(--accent);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .brand-main {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-left: 2px;
+        }
+        .brand-subtitle {
+            font-size: 0.98rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .navbar-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.08rem;
+            letter-spacing: 1px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+        .navbar-links a:hover, .navbar-links a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+        .hero {
+            background: linear-gradient(rgba(56,142,60,0.7), rgba(56,142,60,0.7)), url('https://images.unsplash.com/photo-1627916965646-6c1701389e6c?fit=crop&w=1200&q=80') no-repeat center center/cover;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .hero-content {
+            color: var(--white);
+            text-align: center;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        .cta-btn {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 14px 38px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(56,142,60,0.08);
+            transition: background 0.2s, color 0.2s;
+        }
+        .cta-btn:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        .section {
+            max-width: 1200px;
+            margin: 48px auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 48px 32px;
+        }
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 28px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+            justify-content: center;
+        }
+        .product-card {
+            background: #fafafa;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(56,142,60,0.06);
+            padding: 32px 22px 28px 22px;
+            width: 310px;
+            text-align: center;
+            transition: transform 0.18s, box-shadow 0.18s;
+            border: 1.5px solid #e0e0e0;
+        }
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(56,142,60,0.13);
+            border-color: var(--accent);
+        }
+        .product-card img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 18px;
+            border: 3px solid var(--accent);
+            background: #fff;
+        }
+        .product-card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+        .product-card p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+        .export-info {
+            background: #e8f5e9;
+            border-left: 6px solid var(--primary);
+            padding: 32px 24px;
+            border-radius: 10px;
+            margin-top: 32px;
+            font-size: 1.13rem;
+            color: #2e7d32;
+            box-shadow: 0 2px 8px rgba(56,142,60,0.04);
+        }
+        .contact-form {
+            max-width: 420px;
+            margin: 32px auto 0 auto;
+            background: #f9fbe7;
+            padding: 28px 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(56,142,60,0.04);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            border: 1.5px solid #c8e6c9;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fff;
+            resize: none;
+        }
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: var(--secondary);
+        }
+        .contact-details {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 1.08rem;
+        }
+        .contact-details strong {
+            color: var(--primary);
+        }
+        footer {
+            background: #222;
+            color: var(--white);
+            text-align: center;
+            padding: 22px 0;
+            font-size: 1.05rem;
+            margin-top: 48px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 900px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .section {
+                padding: 32px 8px;
+            }
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .section h2 {
+                font-size: 1.3rem;
+            }
+            .section {
+                padding: 18px 2vw;
+            }
+            .product-card {
+                width: 95vw;
+                max-width: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="https://img.icons8.com/fluency/96/leaf.png" alt="NaturalLifes Logo" class="brand-logo">
+            <div class="brand-title">
+                <span class="brand-highlight">Natural</span><span class="brand-main">Lifes</span>
+                <div class="brand-subtitle">Makhana & Cashew Exporters</div>
+            </div>
+        </div>
+        <nav class="navbar-links">
+            <a href="#products">Products</a>
+            <a href="#export">Export</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Makhana & Cashews</h1>
+            <p>Your trusted partner for quality Makhana, Cashews, and Roasted Makhana. We also export worldwide!</p>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+        </div>
+    </section>
+    <section class="section" id="products">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Makhana">
+                <h3>Makhana</h3>
+                <p>High-quality, handpicked makhana (fox nuts) – perfect for healthy snacking and cooking. Sourced from the best farms and processed with utmost care.</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Cashews">
+                <h3>Cashews</h3>
+                <p>Premium cashew nuts, naturally processed and packed for freshness and taste. Ideal for snacking, gifting, and culinary use.</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1601050690597-2cbbfa4b0a4b?auto=format&fit=crop&w=400&q=80" alt="Roasted Makhana">
+                <h3>Roasted Makhana</h3>
+                <p>Delicious roasted makhana in various flavors – a crunchy, healthy snack for all ages. Available in classic and innovative seasonings.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="export">
+        <h2>Export Services</h2>
+        <div class="export-info">
+            <p>
+                <strong>NaturalLifes</strong> is a leading exporter of Makhana and Cashews, serving clients across the globe. We ensure top-notch quality, timely delivery, and customized packaging to meet international standards. Partner with us for reliable export solutions to countries worldwide.
+            </p>
+            <ul style="margin:18px 0 0 18px; color:#2e7d32; font-size:1.05rem;">
+                <li>Bulk supply for international markets</li>
+                <li>Custom packaging & private labeling</li>
+                <li>Strict quality control & certifications</li>
+                <li>Efficient logistics and documentation</li>
+            </ul>
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" autocomplete="off">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-details">
+            <p>
+                <strong>Email:</strong> info@naturallifes.com<br>
+                <strong>Phone:</strong> +91-12345-67890
+            </p>
+            <p>
+                <strong>Address:</strong> NaturalLifes Exports, Main Road, Patna, Bihar, India
+            </p>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 NaturalLifes. All rights reserved.
+    </footer>
+</body>
+</html>
